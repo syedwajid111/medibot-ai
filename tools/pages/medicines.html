@@ -1,0 +1,23 @@
+<!--title:Medicines & interactions – MediBot|js:medicines-->
+<section class="section page-head">
+  <div class="container"><span class="eyebrow" data-i="eyebrow"></span><h1 data-i="title"></h1><p class="lead" data-i="lead"></p>
+    <div class="seg" role="tablist" style="margin-top:10px"><button role="tab" data-tab="info" aria-selected="true" data-i="tabInfo"></button><button role="tab" data-tab="ix" aria-selected="false" data-i="tabIx"></button></div>
+  </div>
+</section>
+<section class="section" style="padding-bottom:64px">
+  <div class="container">
+    <div id="tab-info">
+      <div class="field" style="max-width:520px;margin-bottom:20px"><label for="q" class="sr-only">Search</label><input id="q" type="search" data-ph="searchPh"></div>
+      <div class="grid g2" id="list"></div>
+    </div>
+    <div id="tab-ix" hidden>
+      <div class="card">
+        <h2 data-i="ixTitle"></h2><p class="muted" data-i="ixLead"></p>
+        <h3 class="small" data-i="pickMeds"></h3><div class="opts" id="ixMeds"></div>
+        <h3 class="small" style="margin-top:16px" data-i="pickSubs"></h3><div class="opts" id="ixSubs"></div>
+        <div class="row" style="margin-top:20px"><button class="btn" id="ixGo" data-i="ixCheck"></button><button class="btn btn-ghost" id="ixClear" data-i="clear"></button><span class="small muted" id="ixCount"></span></div>
+      </div>
+      <div id="ixOut" class="stack" style="margin-top:20px" aria-live="polite"></div>
+    </div>
+  </div>
+</section>

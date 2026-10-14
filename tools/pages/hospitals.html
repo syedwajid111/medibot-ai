@@ -1,0 +1,19 @@
+<!--title:Nearby hospitals & pharmacies – MediBot|js:hospitals|css:leaflet-->
+<section class="section page-head">
+  <div class="container"><span class="eyebrow" data-i="eyebrow"></span><h1 data-i="title"></h1><p class="lead" data-i="lead"></p>
+    <div class="row" style="margin-top:8px">
+      <button class="btn" id="locate"></button>
+      <form id="cityForm" class="row" style="flex:1;min-width:260px;max-width:520px"><input id="city" data-ph="cityPh" style="flex:1;min-width:0" aria-label="City or area"><button class="btn btn-ghost" data-i="search"></button></form>
+    </div>
+    <div class="opts" id="kinds" style="margin-top:14px"></div>
+  </div>
+</section>
+<section class="section" style="padding-bottom:64px">
+  <div class="container grid" style="grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:20px" id="mapGrid">
+    <div id="map" role="region" aria-label="Map"></div>
+    <div><p class="small muted" id="status" aria-live="polite"></p><div class="place-list" id="places"></div></div>
+  </div>
+  <div class="container" style="margin-top:20px"><div class="card card-flat row spread"><div><b data-i="emTitle"></b><p class="small muted" style="margin:0" data-i="emText"></p></div>
+    <div class="row"><a class="btn btn-danger btn-sm" href="tel:1122">1122</a><a class="btn btn-danger btn-sm" href="tel:115">115 Edhi</a></div></div>
+    <p class="small muted" style="margin-top:12px" data-i="credit"></p></div>
+</section>

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<title>Staff panel – MediBot</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0e7c86">
+<meta name="description" content="MediBot – a Groq-powered health information assistant for Pakistan. Trusted NHS/WHO-based answers in English and Urdu, symptom checker, medicine interactions, lab reports, nearby hospitals and reminders.">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Nastaliq+Urdu:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/app.css">
+</head>
+<body data-no-consent="1">
+<div id="site-header"></div>
+<main id="main">
+<section class="section page-head"><div class="container row spread"><div><span class="eyebrow" id="roleTag">Staff panel</span><h1 style="margin:0">MediBot dashboard</h1></div>
+  <div class="row"><span class="pill" id="dbPill"></span><button class="btn btn-ghost btn-sm" id="logoutBtn" hidden>Log out</button></div></div></section>
+<section class="section" style="padding-bottom:64px"><div class="container">
+  <form class="card stack" id="login" style="max-width:520px"><h2 style="font-size:1.3rem;margin:0">Staff sign-in</h2><p class="small muted" style="margin:0">Use the admin password (full access) or the staff password (view only).</p>
+    <div class="row"><input type="password" id="key" placeholder="Password" aria-label="Password" style="flex:1;min-width:180px" autocomplete="current-password"><button class="btn">Open</button></div><p class="form-msg err" id="lMsg"></p></form>
+  <div id="dash" hidden>
+    <div class="seg" role="tablist" id="tabs" style="margin-bottom:20px">
+      <button data-t="overview" aria-selected="true">Overview</button><button data-t="convs">Conversations</button><button data-t="users">Users</button>
+      <button data-t="checks">Symptom checks</button><button data-t="rems">Reminders</button><button data-t="contacts">Messages</button><button data-t="backup" class="adm">Backup &amp; export</button></div>
+    <div data-p="overview" class="stack">
+      <div class="grid g4" id="tot"></div>
+      <div class="grid g2"><div class="card"><h3>Questions per day (14 days)</h3><div class="cols" id="daily"></div></div><div class="card"><h3>Top topics</h3><div class="bars" id="topics"></div></div></div>
+      <div class="grid g3"><div class="card"><h3>Reply types</h3><div class="bars" id="types"></div></div><div class="card"><h3>Answer engine</h3><div class="bars" id="engines"></div></div><div class="card"><h3>Symptom-check results</h3><div class="bars" id="levels"></div></div></div>
+      <div class="grid g2"><div class="card"><h3>Questions the knowledge base couldn't answer</h3><p class="small muted">Add these topics next to improve MediBot.</p><div class="table-wrap"><table><tbody id="unans"></tbody></table></div></div>
+        <div class="card"><h3>Feature usage</h3><div class="bars" id="events"></div></div></div>
+    </div>
+    <div data-p="convs" hidden class="grid" style="grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:20px" id="convGrid">
+      <div class="card stack"><form class="row" id="convSearch"><input id="cq" placeholder="Search chats (e.g. dengue)" style="flex:1;min-width:0" aria-label="Search"><button class="btn btn-sm">Search</button></form>
+        <div id="convList" class="stack"></div><div class="row"><button class="btn btn-ghost btn-sm" id="prev">← Newer</button><button class="btn btn-ghost btn-sm" id="next">Older →</button></div></div>
+      <div class="card" id="convView"><p class="muted">Select a conversation to read it.</p></div>
+    </div>
+    <div data-p="users" hidden class="card"><div class="table-wrap"><table><thead><tr><th>Name</th><th>Email</th><th>Profile</th><th>Chats</th><th>Joined</th></tr></thead><tbody id="usersT"></tbody></table></div></div>
+    <div data-p="checks" hidden class="card"><div class="table-wrap"><table><thead><tr><th>When</th><th>Who</th><th>For</th><th>Symptoms</th><th>Red flags</th><th>Result</th></tr></thead><tbody id="checksT"></tbody></table></div></div>
+    <div data-p="rems" hidden class="card"><div class="table-wrap"><table><thead><tr><th>Medicine</th><th>Dose</th><th>Times</th><th>Days</th><th>Who</th><th>Status</th></tr></thead><tbody id="remsT"></tbody></table></div></div>
+    <div data-p="contacts" hidden class="card"><div class="table-wrap"><table><thead><tr><th>From</th><th>Message</th><th>When</th></tr></thead><tbody id="contactsT"></tbody></table></div></div>
+    <div data-p="backup" hidden class="grid g2">
+      <div class="card stack"><h3>Full backup</h3><p class="muted">Download every table (users without passwords, chats, checks, reminders, events, messages) as one JSON file. Keep it somewhere safe.</p><button class="btn" id="backupBtn">Download full backup (.json)</button></div>
+      <div class="card stack"><h3>Export to Excel (CSV)</h3><p class="muted">Each table as a CSV file that opens in Excel or Google Sheets.</p><div class="opts" id="csvBtns"></div></div>
+      <div class="card card-flat stack" style="grid-column:1/-1"><h3>Database & automatic backups</h3><ul class="small muted" style="margin:0;padding-inline-start:20px">
+        <li>All data is stored in <b>Neon PostgreSQL</b> (Vercel → medibot-ai → Storage → Neon → <i>Open in Neon</i> to browse tables or run SQL).</li>
+        <li>Neon keeps a <b>restore history</b> – you can restore the database to an earlier point in time from the Neon console (Backup &amp; Restore).</li>
+        <li>Download a JSON backup here before your viva or any big change.</li></ul></div>
+    </div>
+  </div>
+</div></section>
+</main>
+<div id="site-footer"></div>
+<script src="/assets/js/core.js" defer></script>
+<script src="/assets/js/admin.js" defer></script>
+</body>
+</html>

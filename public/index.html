@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<title>MediBot – Trusted health answers in Urdu & English</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0e7c86">
+<meta name="description" content="MediBot – a Groq-powered health information assistant for Pakistan. Trusted NHS/WHO-based answers in English and Urdu, symptom checker, medicine interactions, lab reports, nearby hospitals and reminders.">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Nastaliq+Urdu:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/app.css">
+</head>
+<body>
+<div id="site-header"></div>
+<main id="main">
+<section class="section hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow" data-i="eyebrow"></span>
+      <h1 data-ih="heroTitle"></h1>
+      <p class="lead" data-i="heroText"></p>
+      <div class="hero-cta">
+        <a class="btn" href="/chat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg><span data-i="ctaChat"></span></a>
+        <a class="btn btn-ghost" href="/checker" data-i="ctaCheck"></a>
+      </div>
+      <div class="trust" id="trust"></div>
+    </div>
+    <div class="mock" aria-hidden="true">
+      <div class="mock-head"><span class="logo" id="mockLogo"></span><div><b>MediBot</b><div class="small muted" data-i="mockStatus"></div></div></div>
+      <div class="mock-body">
+        <div class="b u" data-i="mockQ"></div>
+        <div class="b a" data-ih="mockA"></div>
+        <div class="b u" data-i="mockQ2"></div>
+        <div class="b a" data-ih="mockA2"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt pad-sm">
+  <div class="container stats" id="stats">
+    <div class="stat"><b id="sQ">–</b><span data-i="stQ"></span></div>
+    <div class="stat"><b id="sD">–</b><span data-i="stD"></span></div>
+    <div class="stat"><b>2</b><span data-i="stL"></span></div>
+    <div class="stat"><b>24/7</b><span data-i="stA"></span></div>
+  </div>
+</section>
+
+<section class="section pad" id="features">
+  <div class="container">
+    <div class="center"><span class="eyebrow" data-i="featEyebrow"></span><h2 data-i="featTitle"></h2><p class="lead" data-i="featText"></p></div>
+    <div class="grid g4" id="featGrid" style="margin-top:36px"></div>
+  </div>
+</section>
+
+<section class="section alt pad">
+  <div class="container">
+    <div class="center"><span class="eyebrow" data-i="howEyebrow"></span><h2 data-i="howTitle"></h2></div>
+    <ol class="steps" id="steps" style="margin-top:36px"></ol>
+  </div>
+</section>
+
+<section class="section pad">
+  <div class="container grid g2" style="align-items:center;gap:48px">
+    <div>
+      <span class="eyebrow" data-i="safeEyebrow"></span>
+      <h2 data-i="safeTitle"></h2>
+      <p class="lead" data-i="safeText"></p>
+      <ul class="ticks" data-list="safePoints"></ul>
+      <a class="btn btn-ghost" href="/about" data-i="safeCta" style="margin-top:12px"></a>
+    </div>
+    <div class="card">
+      <h3 data-i="groqTitle"></h3>
+      <p class="muted" data-i="groqText"></p>
+      <div class="grid g2" style="gap:12px">
+        <div class="card card-flat"><b data-i="g1t"></b><p class="small muted" data-i="g1"></p></div>
+        <div class="card card-flat"><b data-i="g2t"></b><p class="small muted" data-i="g2"></p></div>
+        <div class="card card-flat"><b data-i="g3t"></b><p class="small muted" data-i="g3"></p></div>
+        <div class="card card-flat"><b data-i="g4t"></b><p class="small muted" data-i="g4"></p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt pad" id="faq">
+  <div class="container grid g2" style="gap:48px">
+    <div><span class="eyebrow">FAQ</span><h2 data-i="faqTitle"></h2><p class="lead" data-i="faqText"></p><a class="btn" href="/team#contact" data-i="faqCta"></a></div>
+    <div class="faq" id="faqList"></div>
+  </div>
+</section>
+
+<section class="section pad">
+  <div class="container"><div class="cta-band"><div><h2 data-i="ctaTitle"></h2><p data-i="ctaText"></p></div><a class="btn btn-light" href="/chat" data-i="ctaChat"></a></div></div>
+</section>
+</main>
+<div id="site-footer"></div>
+<script src="/assets/js/core.js" defer></script>
+<script src="/assets/js/home.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{
+  "rewrites": [
+    { "source": "/chat", "destination": "/chat.html" },
+    { "source": "/checker", "destination": "/checker.html" },
+    { "source": "/medicines", "destination": "/medicines.html" },
+    { "source": "/lab", "destination": "/lab.html" },
+    { "source": "/hospitals", "destination": "/hospitals.html" },
+    { "source": "/reminders", "destination": "/reminders.html" },
+    { "source": "/topics", "destination": "/topics.html" },
+    { "source": "/team", "destination": "/team.html" },
+    { "source": "/about", "destination": "/about.html" },
+    { "source": "/privacy", "destination": "/privacy.html" },
+    { "source": "/terms", "destination": "/terms.html" },
+    { "source": "/signin", "destination": "/signin.html" },
+    { "source": "/signup", "destination": "/signup.html" },
+    { "source": "/account", "destination": "/account.html" },
+    { "source": "/admin", "destination": "/admin.html" },
+    { "source": "/offline", "destination": "/offline.html" }
+  ],
+  "headers": [
+    { "source": "/(.*)", "headers": [
+      { "key": "X-Content-Type-Options", "value": "nosniff" },
+      { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+      { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+      { "key": "Permissions-Policy", "value": "camera=(), microphone=(self), geolocation=(self)" }
+    ]},
+    { "source": "/sw.js", "headers": [{ "key": "Cache-Control", "value": "no-cache" }] }
+  ]
+}

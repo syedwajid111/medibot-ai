@@ -1,0 +1,27 @@
+<!--title:AI Health Chat – MediBot|js:chat-->
+<section class="section">
+  <div class="container chat-page" id="chatPage">
+    <aside class="card history" aria-label="Chat history">
+      <button class="btn btn-block" id="newChat"><span data-i="newChat"></span></button>
+      <label class="toggle"><input type="checkbox" id="private"><span data-i="private"></span></label>
+      <p class="small muted" data-i="privateHelp" style="margin:0"></p>
+      <h3 class="small muted" style="margin:8px 0 0" data-i="recent"></h3>
+      <div class="history-list" id="history"></div>
+    </aside>
+    <div class="card chat" aria-label="MediBot chat">
+      <div class="chat-head">
+        <button class="icon-btn" id="histBtn" aria-label="History"></button>
+        <span class="logo" id="chatLogo"></span>
+        <div class="t"><strong>MediBot</strong><small id="engineLine" data-i="engineLine"></small></div>
+        <button class="btn btn-ghost btn-sm" id="newChat2" data-i="new"></button>
+      </div>
+      <div class="log" id="log" aria-live="polite"></div>
+      <div class="chips" id="chips"></div>
+      <form class="composer" id="composer">
+        <input id="msg" autocomplete="off" maxlength="1000" data-ph="placeholder" aria-label="Message">
+        <button type="button" class="icon-btn" id="micBtn" hidden aria-label="Speak"></button>
+        <button class="btn" type="submit" aria-label="Send" id="sendBtn"></button>
+      </form>
+    </div>
+  </div>
+</section>

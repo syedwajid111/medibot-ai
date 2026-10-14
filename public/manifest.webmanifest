@@ -1,0 +1,21 @@
+{
+  "name": "MediBot – Health Assistant",
+  "short_name": "MediBot",
+  "description": "Trusted health information in English and Urdu, powered by Groq.",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f4f9f9",
+  "theme_color": "#0e7c86",
+  "lang": "en",
+  "icons": [
+    {"src": "/assets/img/icon-192.png", "sizes": "192x192", "type": "image/png"},
+    {"src": "/assets/img/icon-512.png", "sizes": "512x512", "type": "image/png"},
+    {"src": "/assets/img/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ],
+  "shortcuts": [
+    {"name": "AI Chat", "url": "/chat"},
+    {"name": "Symptom checker", "url": "/checker"},
+    {"name": "Reminders", "url": "/reminders"}
+  ]
+}

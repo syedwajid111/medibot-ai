@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<title>Medicine reminders – MediBot</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0e7c86">
+<meta name="description" content="MediBot – a Groq-powered health information assistant for Pakistan. Trusted NHS/WHO-based answers in English and Urdu, symptom checker, medicine interactions, lab reports, nearby hospitals and reminders.">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Nastaliq+Urdu:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/app.css">
+</head>
+<body>
+<div id="site-header"></div>
+<main id="main">
+<section class="section page-head">
+  <div class="container"><span class="eyebrow" data-i="eyebrow"></span><h1 data-i="title"></h1><p class="lead" data-i="lead"></p></div>
+</section>
+<section class="section" style="padding-bottom:64px">
+  <div class="container grid g2" style="align-items:start">
+    <form class="card stack" id="remForm">
+      <h2 data-i="addTitle" id="formTitle"></h2>
+      <div class="field"><label for="med" data-i="med"></label><input id="med" list="medList" required maxlength="80" data-ph="medPh"><datalist id="medList"></datalist></div>
+      <div class="field"><label for="dose" data-i="dose"></label><input id="dose" maxlength="60" data-ph="dosePh"></div>
+      <div class="field"><label data-i="times"></label><div class="opts" id="presets"></div><div class="row" id="timeRow" style="margin-top:8px"></div>
+        <button type="button" class="btn btn-ghost btn-sm" id="addTime" style="justify-self:start" data-i="addTime"></button></div>
+      <div class="grid g2"><div class="field"><label for="days" data-i="days"></label><input id="days" type="number" min="1" max="365" inputmode="numeric" data-ph="daysPh"></div>
+        <div class="field"><label for="notes" data-i="notes"></label><input id="notes" maxlength="200" data-ph="notesPh"></div></div>
+      <p class="form-msg" id="msg" role="status"></p>
+      <div class="row"><button class="btn" id="save" data-i="save"></button><button type="button" class="btn btn-ghost" id="cancel" hidden data-i="cancel"></button></div>
+    </form>
+    <div class="stack">
+      <div class="card card-flat row spread" id="notifCard"><div style="flex:1;min-width:200px"><b data-i="notifTitle"></b><p class="small muted" style="margin:0" id="notifText" data-i="notifText"></p></div><button class="btn btn-sm" id="notifBtn" data-i="enable"></button></div>
+      <div class="card"><h3 data-i="today"></h3><div id="today"></div></div>
+      <div><h3 data-i="all"></h3><div id="list" class="stack"></div></div>
+    </div>
+  </div>
+</section>
+</main>
+<div id="site-footer"></div>
+<script src="/assets/js/core.js" defer></script>
+<script src="/assets/js/reminders.js" defer></script>
+</body>
+</html>

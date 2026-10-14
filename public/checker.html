@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<title>Symptom checker – MediBot</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0e7c86">
+<meta name="description" content="MediBot – a Groq-powered health information assistant for Pakistan. Trusted NHS/WHO-based answers in English and Urdu, symptom checker, medicine interactions, lab reports, nearby hospitals and reminders.">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Nastaliq+Urdu:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/app.css">
+</head>
+<body>
+<div id="site-header"></div>
+<main id="main">
+<section class="section page-head">
+  <div class="container"><span class="eyebrow" data-i="eyebrow"></span><h1 data-i="title"></h1><p class="lead" data-i="lead"></p></div>
+</section>
+<section class="section" style="padding-bottom:64px">
+  <div class="container grid" style="grid-template-columns:minmax(0,1fr);gap:24px">
+    <form class="card" id="checker" novalidate>
+      <fieldset class="wizard-step"><legend><span class="n">1</span><span data-i="qWho"></span></legend><div class="opts" id="who"></div></fieldset>
+      <fieldset class="wizard-step"><legend><span class="n">2</span><span data-i="qWhere"></span></legend>
+        <div class="bodymap-wrap">
+          <div class="bodymap">
+            <svg viewBox="0 0 200 430" role="group" aria-label="Body map">
+              <circle class="part" data-area="head" cx="100" cy="42" r="30" tabindex="0" role="button"><title>Head</title></circle>
+              <rect class="part" data-area="throat" x="86" y="72" width="28" height="22" rx="6" tabindex="0" role="button"><title>Throat</title></rect>
+              <path class="part" data-area="chest" d="M58 98h84c8 0 14 6 14 14v44H44v-44c0-8 6-14 14-14z" tabindex="0" role="button"><title>Chest</title></path>
+              <path class="part" data-area="abdomen" d="M48 160h104v62H48z" tabindex="0" role="button"><title>Stomach</title></path>
+              <path class="part" data-area="pelvis" d="M48 226h104v26c0 10-8 18-18 18H66c-10 0-18-8-18-18z" tabindex="0" role="button"><title>Lower belly / urine</title></path>
+              <g class="part-g"><path class="part" data-area="limbs" d="M40 102l-22 120c-2 10 12 12 14 2l22-104zM160 102l22 120c2 10-12 12-14 2l-22-104zM68 274h28l-4 146H72zM104 274h28l-4 146h-20z" tabindex="0" role="button"><title>Arms & legs</title></path></g>
+            </svg>
+          </div>
+          <div>
+            <div class="opts" id="areas" style="margin-bottom:14px"></div>
+            <p class="small muted" data-i="pickHint"></p>
+            <div class="opts" id="symptoms"></div>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset class="wizard-step"><legend><span class="n">3</span><span data-i="qRed"></span></legend><div class="opts red" id="redflags"></div></fieldset>
+      <fieldset class="wizard-step"><legend><span class="n">4</span><span data-i="qMore"></span></legend>
+        <div class="grid g2" style="max-width:560px">
+          <div class="field"><label for="days" data-i="qDays"></label><input type="number" id="days" min="0" max="365" inputmode="numeric"></div>
+          <div class="field"><label for="temp" data-i="qTemp"></label><input type="number" id="temp" min="94" max="110" step="0.1" inputmode="decimal"></div>
+        </div>
+      </fieldset>
+      <p class="form-msg err" id="err" role="alert"></p>
+      <button class="btn" type="submit" id="go" data-i="check"></button>
+    </form>
+    <div id="result" aria-live="polite"></div>
+    <div class="card card-flat no-print" id="pastWrap" hidden><h3 data-i="past"></h3><div class="table-wrap"><table><thead><tr><th data-i="when"></th><th data-i="what"></th><th data-i="result"></th></tr></thead><tbody id="past"></tbody></table></div></div>
+  </div>
+</section>
+</main>
+<div id="site-footer"></div>
+<script src="/assets/js/core.js" defer></script>
+<script src="/assets/js/checker.js" defer></script>
+</body>
+</html>

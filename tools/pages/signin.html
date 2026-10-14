@@ -1,0 +1,13 @@
+<!--title:MediBot|js:auth-->
+<section class="section pad"><div class="container" style="max-width:520px">
+  <form class="card stack" id="authForm" data-mode="signin">
+    <div class="center"><span class="logo" style="margin:0 auto 10px;width:52px;height:52px" id="authLogo"></span><h1 style="font-size:1.8rem" data-i="h_signin"></h1><p class="muted" data-i="sub_signin"></p></div>
+    
+    <div class="field"><label for="email" data-i="email"></label><input id="email" type="email" required maxlength="120" autocomplete="email"></div>
+    <div class="field"><label for="pw" data-i="password"></label><input id="pw" type="password" required minlength="8" maxlength="128" autocomplete="current-password"></div>
+    <p class="form-msg err" id="authMsg" role="alert"></p>
+    <button class="btn btn-block" data-i="btn_signin"></button>
+    <p class="center small muted"><span data-i="alt_signin"></span> <a href="/signup" data-i="altLink_signin"></a></p>
+    <p class="center small muted" data-i="guest"></p>
+  </form>
+</div></section>

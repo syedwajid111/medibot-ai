@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<title>Nearby hospitals & pharmacies – MediBot</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0e7c86">
+<meta name="description" content="MediBot – a Groq-powered health information assistant for Pakistan. Trusted NHS/WHO-based answers in English and Urdu, symptom checker, medicine interactions, lab reports, nearby hospitals and reminders.">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Nastaliq+Urdu:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/app.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+</head>
+<body>
+<div id="site-header"></div>
+<main id="main">
+<section class="section page-head">
+  <div class="container"><span class="eyebrow" data-i="eyebrow"></span><h1 data-i="title"></h1><p class="lead" data-i="lead"></p>
+    <div class="row" style="margin-top:8px">
+      <button class="btn" id="locate"></button>
+      <form id="cityForm" class="row" style="flex:1;min-width:260px;max-width:520px"><input id="city" data-ph="cityPh" style="flex:1;min-width:0" aria-label="City or area"><button class="btn btn-ghost" data-i="search"></button></form>
+    </div>
+    <div class="opts" id="kinds" style="margin-top:14px"></div>
+  </div>
+</section>
+<section class="section" style="padding-bottom:64px">
+  <div class="container grid" style="grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:20px" id="mapGrid">
+    <div id="map" role="region" aria-label="Map"></div>
+    <div><p class="small muted" id="status" aria-live="polite"></p><div class="place-list" id="places"></div></div>
+  </div>
+  <div class="container" style="margin-top:20px"><div class="card card-flat row spread"><div><b data-i="emTitle"></b><p class="small muted" style="margin:0" data-i="emText"></p></div>
+    <div class="row"><a class="btn btn-danger btn-sm" href="tel:1122">1122</a><a class="btn btn-danger btn-sm" href="tel:115">115 Edhi</a></div></div>
+    <p class="small muted" style="margin-top:12px" data-i="credit"></p></div>
+</section>
+</main>
+<div id="site-footer"></div>
+<script src="/assets/js/core.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js" defer></script>
+<script src="/assets/js/hospitals.js" defer></script>
+</body>
+</html>

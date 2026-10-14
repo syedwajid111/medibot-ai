@@ -1,0 +1,18 @@
+<!--title:My account – MediBot|js:account-->
+<section class="section page-head"><div class="container"><span class="eyebrow" data-i="eyebrow"></span><h1 id="hello" data-i="title"></h1><p class="lead" data-i="lead"></p></div></section>
+<section class="section" style="padding-bottom:64px"><div class="container grid g2" style="align-items:start">
+  <div class="stack">
+    <div class="card" id="guestCard" hidden><h3 data-i="guestTitle"></h3><p class="muted" data-i="guestText"></p><div class="row"><a class="btn" href="/signup" data-i="signup"></a><a class="btn btn-ghost" href="/signin" data-i="signin"></a></div></div>
+    <form class="card stack" id="profile" hidden><h2 data-i="profileTitle"></h2><p class="small muted" data-i="profileHelp"></p>
+      <div class="field"><label for="pName" data-i="name"></label><input id="pName" maxlength="80"></div>
+      <div class="grid g2"><div class="field"><label for="pAge" data-i="age"></label><select id="pAge"><option value="" data-i="na"></option><option value="child" data-i="child"></option><option value="teen" data-i="teen"></option><option value="adult" data-i="adult"></option><option value="older" data-i="older"></option><option value="pregnant" data-i="pregnant"></option></select></div>
+      <div class="field"><label for="pSex" data-i="sex"></label><select id="pSex"><option value="" data-i="na"></option><option value="f" data-i="female"></option><option value="m" data-i="male"></option><option value="other" data-i="other"></option></select></div></div>
+      <div class="field"><label for="pCond" data-i="conditions"></label><input id="pCond" maxlength="300" data-ph="condPh"></div>
+      <p class="form-msg" id="pMsg" role="status"></p><div class="row"><button class="btn" data-i="save"></button><button type="button" class="btn btn-ghost" id="logout" data-i="signout"></button></div></form>
+  </div>
+  <div class="stack">
+    <div class="grid g3" id="kpis"></div>
+    <div class="card"><h3 data-i="recent"></h3><div id="convs"></div></div>
+    <div class="card"><h3 data-i="dataTitle"></h3><p class="small muted" data-i="dataText"></p><div class="row"><button class="btn btn-ghost btn-sm" id="export" data-i="export"></button><button class="btn btn-danger btn-sm" id="wipe" data-i="wipe"></button></div></div>
+  </div>
+</div></section>

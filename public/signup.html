@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<title>MediBot</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0e7c86">
+<meta name="description" content="MediBot – a Groq-powered health information assistant for Pakistan. Trusted NHS/WHO-based answers in English and Urdu, symptom checker, medicine interactions, lab reports, nearby hospitals and reminders.">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Nastaliq+Urdu:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/app.css">
+</head>
+<body>
+<div id="site-header"></div>
+<main id="main">
+<section class="section pad"><div class="container" style="max-width:520px">
+  <form class="card stack" id="authForm" data-mode="signup">
+    <div class="center"><span class="logo" style="margin:0 auto 10px;width:52px;height:52px" id="authLogo"></span><h1 style="font-size:1.8rem" data-i="h_signup"></h1><p class="muted" data-i="sub_signup"></p></div>
+    <div class="field"><label for="name" data-i="name"></label><input id="name" required maxlength="80" autocomplete="name"></div>
+    <div class="field"><label for="email" data-i="email"></label><input id="email" type="email" required maxlength="120" autocomplete="email"></div>
+    <div class="field"><label for="pw" data-i="password"></label><input id="pw" type="password" required minlength="8" maxlength="128" autocomplete="new-password"></div>
+    <p class="form-msg err" id="authMsg" role="alert"></p>
+    <button class="btn btn-block" data-i="btn_signup"></button>
+    <p class="center small muted"><span data-i="alt_signup"></span> <a href="/signin" data-i="altLink_signup"></a></p>
+    <p class="center small muted" data-i="guest"></p>
+  </form>
+</div></section>
+</main>
+<div id="site-footer"></div>
+<script src="/assets/js/core.js" defer></script>
+<script src="/assets/js/auth.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!--title:Lab report explainer – MediBot|js:lab-->
+<section class="section page-head">
+  <div class="container"><span class="eyebrow" data-i="eyebrow"></span><h1 data-i="title"></h1><p class="lead" data-i="lead"></p></div>
+</section>
+<section class="section" style="padding-bottom:64px">
+  <div class="container grid g2" style="align-items:start">
+    <form class="card stack" id="labForm">
+      <div class="field"><label for="txt" data-i="paste"></label><textarea id="txt" rows="9" data-ph="ph" required></textarea></div>
+      <div class="row"><div class="field" style="flex:1;min-width:160px"><label for="sex" data-i="sex"></label>
+        <select id="sex"><option value="" data-i="sexAny"></option><option value="f" data-i="female"></option><option value="m" data-i="male"></option></select></div>
+        <button type="button" class="btn btn-ghost btn-sm" id="sample" style="align-self:flex-end" data-i="sample"></button></div>
+      <button class="btn" id="go" data-i="explain"></button>
+      <p class="small muted" data-i="privacyNote"></p>
+    </form>
+    <div id="out" class="stack" aria-live="polite"><div class="card card-flat"><h3 data-i="supported"></h3><p class="small muted" id="supp"></p></div></div>
+  </div>
+</section>

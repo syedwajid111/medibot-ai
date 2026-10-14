@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<title>How MediBot works – MediBot</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0e7c86">
+<meta name="description" content="MediBot – a Groq-powered health information assistant for Pakistan. Trusted NHS/WHO-based answers in English and Urdu, symptom checker, medicine interactions, lab reports, nearby hospitals and reminders.">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Nastaliq+Urdu:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/app.css">
+</head>
+<body>
+<div id="site-header"></div>
+<main id="main">
+<section class="section page-head"><div class="container"><span class="eyebrow" data-i="eyebrow"></span><h1 data-i="title"></h1><p class="lead" data-i="lead"></p></div></section>
+<section class="section" style="padding-bottom:40px"><div class="container"><h2 data-i="pipeTitle"></h2><div class="pipeline" id="pipe"></div></div></section>
+<section class="section alt pad"><div class="container grid g2" style="gap:40px">
+  <div><h2 data-i="safetyTitle"></h2><ul class="ticks" data-list="safety"></ul></div>
+  <div><h2 data-i="stackTitle"></h2><div class="table-wrap"><table><tbody id="stackTable"></tbody></table></div><p class="small" style="margin-top:12px"><a href="/api/docs" data-i="apiLink"></a></p></div>
+</div></section>
+<section class="section pad"><div class="container">
+  <div class="row spread"><h2 style="margin:0" data-i="evalTitle"></h2><span class="pill ok" id="evalScore"></span></div>
+  <p class="muted" data-i="evalLead"></p><div class="grid g4" id="evalCats" style="margin-bottom:20px"></div>
+  <div class="table-wrap"><table><thead><tr><th data-i="cat"></th><th data-i="q"></th><th data-i="exp"></th><th data-i="res"></th></tr></thead><tbody id="evalRows"></tbody></table></div>
+</div></section>
+</main>
+<div id="site-footer"></div>
+<script src="/assets/js/core.js" defer></script>
+<script src="/assets/js/about.js" defer></script>
+</body>
+</html>
