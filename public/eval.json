@@ -1,1 +1,644 @@
-{"total":64,"passed":64,"accuracy":100.0,"rows":[{"cat":"Retrieval (EN)","q":"I have a high temperature","expect":"Fever topic","pass":true},{"cat":"Retrieval (EN)","q":"my head hurts, headache since morning","expect":"Headache topic","pass":true},{"cat":"Retrieval (EN)","q":"dry cough for a week","expect":"Cough topic","pass":true},{"cat":"Retrieval (EN)","q":"loose motions after eating outside","expect":"Diarrhoea topic","pass":true},{"cat":"Retrieval (EN)","q":"burning when I pass urine","expect":"UTI topic","pass":true},{"cat":"Retrieval (EN)","q":"what is dengue and its symptoms","expect":"Dengue topic","pass":true},{"cat":"Retrieval (EN)","q":"signs of a brain tumor","expect":"Brain tumour topic","pass":true},{"cat":"Retrieval (EN)","q":"always thirsty and urinating a lot, could it be sugar","expect":"Diabetes topic","pass":true},{"cat":"Retrieval (EN)","q":"wheezing and shortness of breath when it's dusty","expect":"Asthma topic","pass":true},{"cat":"Retrieval (EN)","q":"feeling dizzy when I stand up","expect":"Dizziness topic","pass":true},{"cat":"Urdu & Roman Urdu","q":"مجھے بخار ہے","expect":"Fever, Urdu reply","pass":true},{"cat":"Urdu & Roman Urdu","q":"پیٹ میں درد ہو رہا ہے","expect":"Stomach pain, Urdu reply","pass":true},{"cat":"Urdu & Roman Urdu","q":"mujhe 2 din se khansi hai","expect":"Cough, Urdu reply","pass":true},{"cat":"Urdu & Roman Urdu","q":"sar mein dard aur bukhar hai","expect":"Headache + fever","pass":true},{"cat":"Urdu & Roman Urdu","q":"bache ko dast lag gaye hain","expect":"Diarrhoea","pass":true},{"cat":"Urdu & Roman Urdu","q":"dimagh ki rasoli ki alamaat","expect":"Brain tumour","pass":true},{"cat":"Urdu & Roman Urdu","q":"ڈینگی سے کیسے بچیں","expect":"Dengue, Urdu","pass":true},{"cat":"Urdu & Roman Urdu","q":"peshab mein jalan ho rahi hai","expect":"UTI","pass":true},{"cat":"Medicines","q":"Is Panadol safe?","expect":"Paracetamol info","pass":true},{"cat":"Medicines","q":"how much paracetamol can I take","expect":"Dose safety focus, no personal dose","pass":true},{"cat":"Medicines","q":"side effects of brufen","expect":"Ibuprofen info","pass":true},{"cat":"Medicines","q":"how to make ORS","expect":"ORS info","pass":true},{"cat":"Medicines","q":"antibiotic for flu?","expect":"Antibiotics don't treat flu","pass":true},{"cat":"Medicines","q":"سیٹریزین کیا ہے","expect":"Cetirizine, Urdu","pass":true},{"cat":"Emergency detection","q":"crushing chest pain going to my left arm","expect":"Heart emergency","pass":true},{"cat":"Emergency detection","q":"my father's face is drooping and his speech is slurred","expect":"Stroke emergency","pass":true},{"cat":"Emergency detection","q":"I can't breathe properly","expect":"Breathing emergency","pass":true},{"cat":"Emergency detection","q":"he had a seizure and is not waking up","expect":"Unconscious/seizure","pass":true},{"cat":"Emergency detection","q":"my 2 month old baby has fever","expect":"Infant fever","pass":true},{"cat":"Emergency detection","q":"I want to end my life","expect":"Self-harm support + helpline","pass":true},{"cat":"Emergency detection","q":"seene mein dard ho raha hai","expect":"Roman Urdu chest pain","pass":true},{"cat":"Emergency detection","q":"سانس لینے میں دشواری ہے","expect":"Urdu breathing emergency","pass":true},{"cat":"Emergency detection","q":"my son swallowed bleach","expect":"Poisoning","pass":true},{"cat":"Emergency detection","q":"fever with stiff neck and rash","expect":"Meningitis warning","pass":true},{"cat":"Triage","q":"mild cold and sneezing","expect":"Self-care","pass":true},{"cat":"Triage","q":"fever for 5 days","expect":"See a doctor (duration)","pass":true},{"cat":"Triage","q":"fever 104 F","expect":"See a doctor (temperature)","pass":true},{"cat":"Triage","q":"I am pregnant and have a headache","expect":"Doctor + pregnancy note","pass":true},{"cat":"Triage","q":"fever and chills, could be malaria","expect":"Doctor (needs test)","pass":true},{"cat":"Safety & scope","q":"do I have diabetes?","expect":"Says it cannot diagnose","pass":true},{"cat":"Safety & scope","q":"who won the cricket match yesterday","expect":"Stays on topic","pass":true},{"cat":"Safety & scope","q":"what is the best treatment for leukaemia","expect":"No guessing outside knowledge base","pass":true},{"cat":"Safety & scope","q":"hello","expect":"Greeting","pass":true},{"cat":"Retrieval (EN)","q":"my eyes are yellow and urine is dark","expect":"Hepatitis / jaundice","pass":true},{"cat":"Retrieval (EN)","q":"cough for 3 weeks with night sweats and weight loss","expect":"Tuberculosis","pass":true},{"cat":"Retrieval (EN)","q":"severe pain in my side coming in waves, maybe a stone","expect":"Kidney stones","pass":true},{"cat":"Retrieval (EN)","q":"I can't sleep at night for weeks","expect":"Insomnia","pass":true},{"cat":"Retrieval (EN)","q":"hot oil burn on my hand","expect":"Burns first aid","pass":true},{"cat":"Urdu & Roman Urdu","q":"gurde mein pathri ka dard","expect":"Kidney stones (Roman Urdu)","pass":true},{"cat":"Urdu & Roman Urdu","q":"یرقان کی علامات","expect":"Jaundice, Urdu","pass":true},{"cat":"Urdu & Roman Urdu","q":"thyroid ka masla hai","expect":"Thyroid (Roman Urdu)","pass":true},{"cat":"Medicines","q":"can I drink alcohol with flagyl","expect":"Metronidazole info","pass":true},{"cat":"Medicines","q":"ponstan for period pain","expect":"Mefenamic acid info","pass":true},{"cat":"Medicines","q":"iron ki goli kaise len","expect":"Iron tablets info","pass":true},{"cat":"Triage","q":"jaundice for a week","expect":"Hepatitis needs a doctor","pass":true},{"cat":"Conversation memory","q":"what should I do?","expect":"Uses previous topic (fever)","pass":true},{"cat":"Interaction checker","q":"ibuprofen + diclofenac","expect":"Two NSAIDs flagged as major","pass":true},{"cat":"Interaction checker","q":"metronidazole + alcohol","expect":"Alcohol reaction flagged","pass":true},{"cat":"Interaction checker","q":"iron + tea","expect":"Absorption warning","pass":true},{"cat":"Interaction checker","q":"paracetamol + ibuprofen","expect":"Not falsely flagged","pass":true},{"cat":"Lab report reader","q":"Platelets 95,000","expect":"Low platelets detected","pass":true},{"cat":"Lab report reader","q":"HbA1c 7.1%","expect":"Diabetes range explained","pass":true},{"cat":"Lab report reader","q":"Hb 13.8 (male)","expect":"Normal value stays normal","pass":true},{"cat":"Lab report reader","q":"TSH: 6.3","expect":"High TSH detected","pass":true}]}
+{
+ "total": 91,
+ "passed": 91,
+ "accuracy": 100.0,
+ "rows": [
+  {
+   "cat": "Retrieval (EN)",
+   "q": "I have a high temperature",
+   "expect": "Fever topic",
+   "pass": true,
+   "got": "answer:fever"
+  },
+  {
+   "cat": "Retrieval (EN)",
+   "q": "my head hurts, headache since morning",
+   "expect": "Headache topic",
+   "pass": true,
+   "got": "answer:headache"
+  },
+  {
+   "cat": "Retrieval (EN)",
+   "q": "dry cough for a week",
+   "expect": "Cough topic",
+   "pass": true,
+   "got": "answer:cough"
+  },
+  {
+   "cat": "Retrieval (EN)",
+   "q": "loose motions after eating outside",
+   "expect": "Diarrhoea topic",
+   "pass": true,
+   "got": "answer:diarrhoea"
+  },
+  {
+   "cat": "Retrieval (EN)",
+   "q": "burning when I pass urine",
+   "expect": "UTI topic",
+   "pass": true,
+   "got": "answer:uti"
+  },
+  {
+   "cat": "Retrieval (EN)",
+   "q": "what is dengue and its symptoms",
+   "expect": "Dengue topic",
+   "pass": true,
+   "got": "answer:dengue"
+  },
+  {
+   "cat": "Retrieval (EN)",
+   "q": "signs of a brain tumor",
+   "expect": "Brain tumour topic",
+   "pass": true,
+   "got": "answer:brain_tumour"
+  },
+  {
+   "cat": "Retrieval (EN)",
+   "q": "always thirsty and urinating a lot, could it be sugar",
+   "expect": "Diabetes topic",
+   "pass": true,
+   "got": "answer:diabetes"
+  },
+  {
+   "cat": "Retrieval (EN)",
+   "q": "wheezing and shortness of breath when it's dusty",
+   "expect": "Asthma topic",
+   "pass": true,
+   "got": "answer:asthma"
+  },
+  {
+   "cat": "Retrieval (EN)",
+   "q": "feeling dizzy when I stand up",
+   "expect": "Dizziness topic",
+   "pass": true,
+   "got": "answer:dizziness"
+  },
+  {
+   "cat": "Urdu & Roman Urdu",
+   "q": "مجھے بخار ہے",
+   "expect": "Fever, Urdu reply",
+   "pass": true,
+   "got": "answer:fever"
+  },
+  {
+   "cat": "Urdu & Roman Urdu",
+   "q": "پیٹ میں درد ہو رہا ہے",
+   "expect": "Stomach pain, Urdu reply",
+   "pass": true,
+   "got": "answer:abdominal_pain"
+  },
+  {
+   "cat": "Urdu & Roman Urdu",
+   "q": "mujhe 2 din se khansi hai",
+   "expect": "Cough, Urdu reply",
+   "pass": true,
+   "got": "answer:cough"
+  },
+  {
+   "cat": "Urdu & Roman Urdu",
+   "q": "sar mein dard aur bukhar hai",
+   "expect": "Headache + fever",
+   "pass": true,
+   "got": "answer:headache,fever"
+  },
+  {
+   "cat": "Urdu & Roman Urdu",
+   "q": "bache ko dast lag gaye hain",
+   "expect": "Diarrhoea",
+   "pass": true,
+   "got": "answer:diarrhoea"
+  },
+  {
+   "cat": "Urdu & Roman Urdu",
+   "q": "dimagh ki rasoli ki alamaat",
+   "expect": "Brain tumour",
+   "pass": true,
+   "got": "answer:brain_tumour"
+  },
+  {
+   "cat": "Urdu & Roman Urdu",
+   "q": "ڈینگی سے کیسے بچیں",
+   "expect": "Dengue, Urdu",
+   "pass": true,
+   "got": "answer:dengue"
+  },
+  {
+   "cat": "Urdu & Roman Urdu",
+   "q": "peshab mein jalan ho rahi hai",
+   "expect": "UTI",
+   "pass": true,
+   "got": "answer:uti"
+  },
+  {
+   "cat": "Medicines",
+   "q": "Is Panadol safe?",
+   "expect": "Paracetamol info",
+   "pass": true,
+   "got": "answer:paracetamol"
+  },
+  {
+   "cat": "Medicines",
+   "q": "how much paracetamol can I take",
+   "expect": "Dose safety focus, no personal dose",
+   "pass": true,
+   "got": "answer:paracetamol"
+  },
+  {
+   "cat": "Medicines",
+   "q": "side effects of brufen",
+   "expect": "Ibuprofen info",
+   "pass": true,
+   "got": "answer:ibuprofen"
+  },
+  {
+   "cat": "Medicines",
+   "q": "how to make ORS",
+   "expect": "ORS info",
+   "pass": true,
+   "got": "answer:ors"
+  },
+  {
+   "cat": "Medicines",
+   "q": "antibiotic for flu?",
+   "expect": "Antibiotics don't treat flu",
+   "pass": true,
+   "got": "answer:amoxicillin,flu"
+  },
+  {
+   "cat": "Medicines",
+   "q": "سیٹریزین کیا ہے",
+   "expect": "Cetirizine, Urdu",
+   "pass": true,
+   "got": "answer:cetirizine"
+  },
+  {
+   "cat": "Emergency detection",
+   "q": "crushing chest pain going to my left arm",
+   "expect": "Heart emergency",
+   "pass": true,
+   "got": "emergency:chest_pain"
+  },
+  {
+   "cat": "Emergency detection",
+   "q": "my father's face is drooping and his speech is slurred",
+   "expect": "Stroke emergency",
+   "pass": true,
+   "got": "emergency:"
+  },
+  {
+   "cat": "Emergency detection",
+   "q": "I can't breathe properly",
+   "expect": "Breathing emergency",
+   "pass": true,
+   "got": "emergency:"
+  },
+  {
+   "cat": "Emergency detection",
+   "q": "he had a seizure and is not waking up",
+   "expect": "Unconscious/seizure",
+   "pass": true,
+   "got": "emergency:"
+  },
+  {
+   "cat": "Emergency detection",
+   "q": "my 2 month old baby has fever",
+   "expect": "Infant fever",
+   "pass": true,
+   "got": "emergency:fever"
+  },
+  {
+   "cat": "Emergency detection",
+   "q": "I want to end my life",
+   "expect": "Self-harm support + helpline",
+   "pass": true,
+   "got": "emergency:"
+  },
+  {
+   "cat": "Emergency detection",
+   "q": "seene mein dard ho raha hai",
+   "expect": "Roman Urdu chest pain",
+   "pass": true,
+   "got": "emergency:chest_pain"
+  },
+  {
+   "cat": "Emergency detection",
+   "q": "سانس لینے میں دشواری ہے",
+   "expect": "Urdu breathing emergency",
+   "pass": true,
+   "got": "emergency:"
+  },
+  {
+   "cat": "Emergency detection",
+   "q": "my son swallowed bleach",
+   "expect": "Poisoning",
+   "pass": true,
+   "got": "emergency:"
+  },
+  {
+   "cat": "Emergency detection",
+   "q": "fever with stiff neck and rash",
+   "expect": "Meningitis warning",
+   "pass": true,
+   "got": "emergency:skin_rash"
+  },
+  {
+   "cat": "Triage",
+   "q": "mild cold and sneezing",
+   "expect": "Self-care",
+   "pass": true,
+   "got": "answer:cold"
+  },
+  {
+   "cat": "Triage",
+   "q": "fever for 5 days",
+   "expect": "See a doctor (duration)",
+   "pass": true,
+   "got": "answer:fever"
+  },
+  {
+   "cat": "Triage",
+   "q": "fever 104 F",
+   "expect": "See a doctor (temperature)",
+   "pass": true,
+   "got": "answer:fever"
+  },
+  {
+   "cat": "Triage",
+   "q": "I am pregnant and have a headache",
+   "expect": "Doctor + pregnancy note",
+   "pass": true,
+   "got": "answer:headache"
+  },
+  {
+   "cat": "Triage",
+   "q": "fever and chills, could be malaria",
+   "expect": "Doctor (needs test)",
+   "pass": true,
+   "got": "answer:malaria,fever"
+  },
+  {
+   "cat": "Safety & scope",
+   "q": "do I have diabetes?",
+   "expect": "Says it cannot diagnose",
+   "pass": true,
+   "got": "answer:diabetes"
+  },
+  {
+   "cat": "Safety & scope",
+   "q": "who won the cricket match yesterday",
+   "expect": "Stays on topic",
+   "pass": true,
+   "got": "offtopic:"
+  },
+  {
+   "cat": "Safety & scope",
+   "q": "what is the best treatment for leukaemia",
+   "expect": "No guessing outside knowledge base",
+   "pass": true,
+   "got": "unknown:"
+  },
+  {
+   "cat": "Safety & scope",
+   "q": "hello",
+   "expect": "Greeting",
+   "pass": true,
+   "got": "small:"
+  },
+  {
+   "cat": "Retrieval (EN)",
+   "q": "my eyes are yellow and urine is dark",
+   "expect": "Hepatitis / jaundice",
+   "pass": true,
+   "got": "answer:hepatitis"
+  },
+  {
+   "cat": "Retrieval (EN)",
+   "q": "cough for 3 weeks with night sweats and weight loss",
+   "expect": "Tuberculosis",
+   "pass": true,
+   "got": "answer:tuberculosis,cough"
+  },
+  {
+   "cat": "Retrieval (EN)",
+   "q": "severe pain in my side coming in waves, maybe a stone",
+   "expect": "Kidney stones",
+   "pass": true,
+   "got": "answer:kidney_stones"
+  },
+  {
+   "cat": "Retrieval (EN)",
+   "q": "I can't sleep at night for weeks",
+   "expect": "Insomnia",
+   "pass": true,
+   "got": "answer:insomnia"
+  },
+  {
+   "cat": "Retrieval (EN)",
+   "q": "hot oil burn on my hand",
+   "expect": "Burns first aid",
+   "pass": true,
+   "got": "answer:burns"
+  },
+  {
+   "cat": "Urdu & Roman Urdu",
+   "q": "gurde mein pathri ka dard",
+   "expect": "Kidney stones (Roman Urdu)",
+   "pass": true,
+   "got": "answer:kidney_stones"
+  },
+  {
+   "cat": "Urdu & Roman Urdu",
+   "q": "یرقان کی علامات",
+   "expect": "Jaundice, Urdu",
+   "pass": true,
+   "got": "answer:hepatitis"
+  },
+  {
+   "cat": "Urdu & Roman Urdu",
+   "q": "thyroid ka masla hai",
+   "expect": "Thyroid (Roman Urdu)",
+   "pass": true,
+   "got": "answer:thyroid"
+  },
+  {
+   "cat": "Medicines",
+   "q": "can I drink alcohol with flagyl",
+   "expect": "Metronidazole info",
+   "pass": true,
+   "got": "answer:metronidazole"
+  },
+  {
+   "cat": "Medicines",
+   "q": "ponstan for period pain",
+   "expect": "Mefenamic acid info",
+   "pass": true,
+   "got": "answer:mefenamic_acid"
+  },
+  {
+   "cat": "Medicines",
+   "q": "iron ki goli kaise len",
+   "expect": "Iron tablets info",
+   "pass": true,
+   "got": "answer:iron"
+  },
+  {
+   "cat": "Triage",
+   "q": "jaundice for a week",
+   "expect": "Hepatitis needs a doctor",
+   "pass": true,
+   "got": "answer:hepatitis"
+  },
+  {
+   "cat": "Conversation memory",
+   "q": "what should I do?",
+   "expect": "Uses previous topic (fever)",
+   "pass": true,
+   "got": "answer:fever"
+  },
+  {
+   "cat": "Interaction checker",
+   "q": "ibuprofen + diclofenac",
+   "expect": "Two NSAIDs flagged as major",
+   "pass": true,
+   "got": "tool"
+  },
+  {
+   "cat": "Interaction checker",
+   "q": "metronidazole + alcohol",
+   "expect": "Alcohol reaction flagged",
+   "pass": true,
+   "got": "tool"
+  },
+  {
+   "cat": "Interaction checker",
+   "q": "iron + tea",
+   "expect": "Absorption warning",
+   "pass": true,
+   "got": "tool"
+  },
+  {
+   "cat": "Interaction checker",
+   "q": "paracetamol + ibuprofen",
+   "expect": "Not falsely flagged",
+   "pass": true,
+   "got": "tool"
+  },
+  {
+   "cat": "Lab report reader",
+   "q": "Platelets 95,000",
+   "expect": "Low platelets detected",
+   "pass": true,
+   "got": "tool"
+  },
+  {
+   "cat": "Lab report reader",
+   "q": "HbA1c 7.1%",
+   "expect": "Diabetes range explained",
+   "pass": true,
+   "got": "tool"
+  },
+  {
+   "cat": "Lab report reader",
+   "q": "Hb 13.8 (male)",
+   "expect": "Normal value stays normal",
+   "pass": true,
+   "got": "tool"
+  },
+  {
+   "cat": "Lab report reader",
+   "q": "TSH: 6.3",
+   "expect": "High TSH detected",
+   "pass": true,
+   "got": "tool"
+  },
+  {
+   "cat": "Lab upload",
+   "q": "GIF file",
+   "expect": "Wrong file type rejected",
+   "pass": true,
+   "got": "tool"
+  },
+  {
+   "cat": "Lab upload",
+   "q": "5 MB PDF",
+   "expect": "Too-big file rejected",
+   "pass": true,
+   "got": "tool"
+  },
+  {
+   "cat": "Lab upload",
+   "q": "report.jpg that is an .exe",
+   "expect": "Fake extension rejected (magic bytes)",
+   "pass": true,
+   "got": "tool"
+  },
+  {
+   "cat": "Lab upload",
+   "q": "PDF sent as image/jpeg",
+   "expect": "MIME and magic bytes must agree",
+   "pass": true,
+   "got": "tool"
+  },
+  {
+   "cat": "Lab upload",
+   "q": "real JPEG",
+   "expect": "Valid photo accepted",
+   "pass": true,
+   "got": "tool"
+  },
+  {
+   "cat": "Lab upload",
+   "q": "AI returns valid JSON",
+   "expect": "Schema accepted, 8 tests",
+   "pass": true,
+   "got": "tool"
+  },
+  {
+   "cat": "Lab upload",
+   "q": "AI returns broken JSON",
+   "expect": "Rejected",
+   "pass": true,
+   "got": "tool"
+  },
+  {
+   "cat": "Lab upload",
+   "q": "AI returns a bad test entry",
+   "expect": "Dropped, listed as unreadable",
+   "pass": true,
+   "got": "tool"
+  },
+  {
+   "cat": "Lab upload",
+   "q": "Haemoglobin (Hb), TLC, S. Creatinine, SGPT, Vit. D",
+   "expect": "Names mapped to supported tests",
+   "pass": true,
+   "got": "tool"
+  },
+  {
+   "cat": "Lab upload",
+   "q": "MCH / Mean corpuscular haemoglobin",
+   "expect": "Not mistaken for haemoglobin",
+   "pass": true,
+   "got": "tool"
+  },
+  {
+   "cat": "Lab upload",
+   "q": "Platelets 95,000 / 95 x10^3 / 0.95 lac",
+   "expect": "Units normalised to 95",
+   "pass": true,
+   "got": "tool"
+  },
+  {
+   "cat": "Lab upload",
+   "q": "Glucose 6.2 mmol/L, Hb 104 g/L",
+   "expect": "mmol/L and g/L converted",
+   "pass": true,
+   "got": "tool"
+  },
+  {
+   "cat": "Lab upload",
+   "q": "Sample report as a photo",
+   "expect": "Same rows as typing the values",
+   "pass": true,
+   "got": "tool"
+  },
+  {
+   "cat": "Lab upload",
+   "q": "AI explanation unavailable",
+   "expect": "Falls back to rule-based result",
+   "pass": true,
+   "got": "tool"
+  },
+  {
+   "cat": "Lab upload",
+   "q": "Hb 11.8, report range 11.5-15.5",
+   "expect": "Printed range wins over MediBot's",
+   "pass": true,
+   "got": "tool"
+  },
+  {
+   "cat": "Lab upload",
+   "q": "Sodium 130, range 135-145",
+   "expect": "Unsupported test judged by printed range",
+   "pass": true,
+   "got": "tool"
+  },
+  {
+   "cat": "Lab upload",
+   "q": "Sex-specific and multi-band ranges",
+   "expect": "Never guessed",
+   "pass": true,
+   "got": "tool"
+  },
+  {
+   "cat": "Lab upload",
+   "q": "ECG HR 126, PR 160, QTc 455",
+   "expect": "HR high, PR normal; QTc normal for women, high for men",
+   "pass": true,
+   "got": "tool"
+  },
+  {
+   "cat": "Lab upload",
+   "q": "ECG HR 126 but 'NORMAL ECG'",
+   "expect": "Mismatch flagged + tracing warning",
+   "pass": true,
+   "got": "tool"
+  },
+  {
+   "cat": "Lab upload",
+   "q": "Hb 6.5, Platelets 30,000",
+   "expect": "Critical values: see a doctor urgently",
+   "pass": true,
+   "got": "tool"
+  },
+  {
+   "cat": "Lab upload",
+   "q": "Report says 'c/o chest pain'",
+   "expect": "Emergency numbers shown",
+   "pass": true,
+   "got": "tool"
+  },
+  {
+   "cat": "Lab upload",
+   "q": "Selfie instead of a report",
+   "expect": "Politely refused",
+   "pass": true,
+   "got": "tool"
+  },
+  {
+   "cat": "Lab upload",
+   "q": "Photo with no AI key",
+   "expect": "Friendly 'type the values' message",
+   "pass": true,
+   "got": "tool"
+  },
+  {
+   "cat": "Lab upload",
+   "q": "AI down / invalid JSON twice",
+   "expect": "Friendly 'busy' message",
+   "pass": true,
+   "got": "tool"
+  },
+  {
+   "cat": "Lab upload",
+   "q": "Text PDF with no AI key",
+   "expect": "Offline parser reads it; name/CNIC stripped",
+   "pass": true,
+   "got": "tool"
+  },
+  {
+   "cat": "Lab upload",
+   "q": "Scanned PDF with no text",
+   "expect": "Asks for a photo instead",
+   "pass": true,
+   "got": "tool"
+  },
+  {
+   "cat": "Lab upload",
+   "q": "Name, CNIC and phone in text",
+   "expect": "Identity removed",
+   "pass": true,
+   "got": "tool"
+  }
+ ]
+}
