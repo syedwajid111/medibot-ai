@@ -24,6 +24,14 @@
   <div class="container grid g2" style="align-items:start">
     <form class="card stack" id="labForm">
       <div class="field"><label for="txt" data-i="paste"></label><textarea id="txt" rows="9" data-ph="ph" required></textarea></div>
+      <div class="field"><label for="file" data-i="upTitle"></label>
+        <div class="drop" id="drop"><p class="small muted" data-i="upHint"></p>
+          <div class="row"><button type="button" class="btn btn-ghost btn-sm" id="pick" data-i="upPick"></button><button type="button" class="btn btn-ghost btn-sm" id="camBtn" data-i="upCamera" hidden></button></div>
+          <input type="file" id="file" accept="image/*,application/pdf,.heic,.heif" hidden><input type="file" id="cam" accept="image/*" capture="environment" hidden></div>
+        <div class="file-prev" id="prev" hidden><img id="thumb" alt=""><span class="fp-ico" id="pdfIco">PDF</span>
+          <div class="fp-meta"><b id="fname" dir="ltr"></b><span class="small muted" id="fsize" dir="ltr"></span></div><button type="button" class="btn btn-ghost btn-sm" id="rm" data-i="upRemove"></button></div>
+        <p class="form-msg err" id="upErr" role="alert"></p>
+        <p class="small muted" data-i="upPrivacy"></p></div>
       <div class="row"><div class="field" style="flex:1;min-width:160px"><label for="sex" data-i="sex"></label>
         <select id="sex"><option value="" data-i="sexAny"></option><option value="f" data-i="female"></option><option value="m" data-i="male"></option></select></div>
         <button type="button" class="btn btn-ghost btn-sm" id="sample" style="align-self:flex-end" data-i="sample"></button></div>

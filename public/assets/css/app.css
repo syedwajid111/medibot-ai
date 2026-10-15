@@ -450,3 +450,15 @@ dialog h2:focus { outline: none; }
   dialog { padding: 20px; }
 }
 @media (max-width: 340px) { .brand .nm { display: none; } }
+
+/* lab report upload */
+.drop { display: grid; gap: 10px; justify-items: center; text-align: center; padding: 18px 14px; border: 1.5px dashed var(--line); border-radius: var(--radius-sm); background: var(--surface-2); cursor: pointer; }
+.drop.over { border-color: var(--brand); background: var(--brand-soft); }
+.drop p { margin: 0; }
+.drop .row { justify-content: center; }
+.file-prev { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--surface); }
+.file-prev img, .file-prev .fp-ico { width: 52px; height: 52px; flex: none; border-radius: 8px; object-fit: cover; border: 1px solid var(--line); }
+.file-prev .fp-ico { display: grid; place-items: center; background: var(--brand-soft); color: var(--brand); font-weight: 800; font-size: .8rem; }
+.file-prev .fp-meta { flex: 1; min-width: 0; display: grid; }
+.file-prev .fp-meta b { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.findings { white-space: pre-line; overflow-wrap: anywhere; }
