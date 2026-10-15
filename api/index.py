@@ -16,13 +16,18 @@ from collections import defaultdict, deque
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-from fastapi import Depends, FastAPI, HTTPException, Request, Response
+from fastapi import Depends, FastAPI, File, Form, HTTPException, Request, Response, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
+from starlette.formparsers import MultiPartParser
 
 sys.path.insert(0, str(Path(__file__).parent))
 from _medibot import packs  # noqa: E402,F401  (loads v3 knowledge packs first)
-from _medibot import admin, db, engine, llm, tools  # noqa: E402
+from _medibot import admin, db, engine, llm, tools, upload  # noqa: E402
+
+# Keep uploaded reports in memory: Starlette spools files over 1 MB to a temp file on disk by default.
+# Vercel caps request bodies at 4.5 MB, so 5 MB keeps every accepted upload off the disk.
+MultiPartParser.max_file_size = 5 * 1024 * 1024
 
 app = FastAPI(title="MediBot API", version="3.0.0", docs_url="/api/docs", openapi_url="/api/openapi.json", redoc_url=None)
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["GET", "POST", "PUT", "DELETE"], allow_headers=["*"])
@@ -387,6 +392,27 @@ def lab(body: LabIn, request: Request, w: Who = Depends(who)):
         if r:
             res["ai_text"], res["engine"] = r[0], r[1]
     db.log_event("lab", w.owner, tests=[r["id"] for r in res["rows"]], abnormal=res["abnormal"])
+    res["critical"] = upload.critical_checks(res["rows"], body.lang)
+    return res
+
+
+@app.post("/api/lab/upload")
+def lab_upload(request: Request, file: UploadFile = File(...), sex: str = Form(""), lang: str = Form("en"),
+               w: Who = Depends(who)):
+    """Photo or PDF of a report -> same shape as /api/lab (+ extracted_text_lines, unreadable_parts, report_type,
+    confidence_note). Processed in memory only; the file and its text are never stored or logged."""
+    _limit(request, 6, "labup")
+    lang = _lang(lang)
+    sex = sex if sex in ("f", "m") else (w.user or {}).get("sex")
+    data = file.file.read(upload.MAX_BYTES + 1)
+    try:
+        res = upload.process(data, file.content_type, lang, sex if sex in ("f", "m") else None)
+    except upload.UploadError as e:
+        raise HTTPException(e.status, e.text(lang))
+    except Exception:
+        raise HTTPException(500, upload.UploadError(500, "server").text(lang))
+    db.log_event("lab_upload", w.owner, report_type=res["report_type"], tests=[r["id"] for r in res["rows"] if not r["id"].startswith("rep_")],
+                 abnormal=res["abnormal"])
     return res
 
 
