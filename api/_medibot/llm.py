@@ -87,10 +87,13 @@ def _call(messages: list[dict], max_tokens: int = 500, temperature: float = 0.3,
                 if text:
                     return text, f"{name}:{model}"
         except urllib.error.HTTPError as e:
+            # status + provider's error message only, never request content (shows in Vercel logs)
+            print(f"llm {name}:{model} HTTP {e.code} {e.read()[:200]!r}")
             if e.code in (400, 404):  # model retired or unavailable: try the next one
                 continue
             return None
-        except Exception:
+        except Exception as e:
+            print(f"llm {name}:{model} {type(e).__name__}")
             return None
     return None
 
